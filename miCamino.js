@@ -232,3 +232,25 @@ console.log(newPhrase);
 console.log(miCamino.subiendoAlEverest[0][0].campoBase[0].campoI.campoII.campoIII.campoIV[8].cima);
 
 //por ultimo como bonus,en un console.log mostraremos por pantalla las urls de todas las imagenes de los materiales y en otro haremos la media de la altitud de todas la cimas que hemos subido.
+
+for (let elem of miCamino.material) {
+  for (let pack of elem.imagenes) {
+    if (pack.imagen1 && pack.imagen1.url) {
+      console.log(pack.imagen1.url);
+    }
+    if (pack.imagen2 && pack.imagen2.url) {
+      console.log(pack.imagen2.url);
+    }
+  }
+}
+
+//Si no realizo la comprobacion de si hay un url no funciona
+
+let counter = 0;
+let total = 0;
+for (let top of miCamino.cimas) {
+  total += top.altitud;
+  counter++;
+}
+
+console.log(total / counter);
